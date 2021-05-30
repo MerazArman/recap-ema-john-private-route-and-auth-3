@@ -70,3 +70,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # recap-ema-john-simple-1
 # recap-ema-john-routing-2
+# recap-ema-john-private-route-and-auth-3

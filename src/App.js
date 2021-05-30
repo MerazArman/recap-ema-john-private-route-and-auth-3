@@ -12,6 +12,8 @@ import Review from './component/Review/Review';
 import Manage from './component/Manage/Manage';
 import NoteFound from './component/NotFound/NoteFound';
 import ProductDetails from './component/ProductDetails/ProductDetails';
+import Shipment from './component/Shipment/Shipment';
+import Login from './component/Login/Login';
 
 function App() {
   return (
@@ -27,6 +29,12 @@ function App() {
           </Route>
           <Route path="/manage">
             <Manage></Manage>
+          </Route>
+          <Route path="/shipment">
+            <Shipment></Shipment>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
           </Route>
           <Route exact path="/">
             <Shop></Shop>
