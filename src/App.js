@@ -14,12 +14,18 @@ import NoteFound from './component/NotFound/NoteFound';
 import ProductDetails from './component/ProductDetails/ProductDetails';
 import Shipment from './component/Shipment/Shipment';
 import Login from './component/Login/Login';
+import { createContext, useState } from 'react';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
+
+export const UserContext = createContext();
 
 function App() {
+  const [userLogged, setUserLogged] = useState({});
   return (
-    <div >
-      <Header> </Header>
+    <UserContext.Provider value ={[userLogged, setUserLogged]}>
+      <h2>email:{userLogged.email}</h2>
       <Router>
+      <Header> </Header>
         <Switch>
           <Route path="/shop">
           <Shop></Shop>
@@ -27,12 +33,12 @@ function App() {
           <Route path="/review">
             <Review></Review>
           </Route>
-          <Route path="/manage">
+          <PrivateRoute path="/manage">
             <Manage></Manage>
-          </Route>
-          <Route path="/shipment">
+          </PrivateRoute>
+          <PrivateRoute path="/shipment">
             <Shipment></Shipment>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -49,7 +55,7 @@ function App() {
       </Router>
       
      
-    </div>
+    </UserContext.Provider>
   );
 }
 
